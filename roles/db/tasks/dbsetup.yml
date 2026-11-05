@@ -1,0 +1,15 @@
+
+- name: Install PostgreSQL repository
+  shell: dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-10-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+- name: Install PostgreSQL 18 server
+  shell: dnf install -y postgresql18-server
+
+- name: Initialize PostgreSQL database
+  shell: /usr/pgsql-18/bin/postgresql-18-setup initdb
+
+- name: Enable PostgreSQL service
+  shell: systemctl enable postgresql-18
+
+- name: Start PostgreSQL service
+  shell: systemctl start postgresql-18

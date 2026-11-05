@@ -1,0 +1,8 @@
+- name: Install AutoSys Engine prerequisites
+  dnf:
+    name:
+      - libnsl-2.39-37.el10.x86_64
+      - libxcrypt-compat
+      - perl
+    state: present
+

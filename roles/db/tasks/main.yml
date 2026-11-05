@@ -1,0 +1,17 @@
+- name: Create instance(s)
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks: 
+   - name: Launching ec2
+     include_tasks: ec2config.yml
+
+- name: Setup db
+  hosts: TST_Appdb-Server
+  become: yes
+  tasks:
+   - name: Install dependencies
+     include_tasks: dependencies.yml
+
+   - name: Setup database
+     include_tasks: dbsetup.yml

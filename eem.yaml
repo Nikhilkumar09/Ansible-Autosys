@@ -1,0 +1,87 @@
+- name: EEM installation
+  hosts: TST_Web-Server
+  tasks:
+    - name: Disk cleanup
+      ansible.windows.win_powershell:
+       script: |
+        DISM /Online /Cleanup-Image /StartComponentCleanup
+        Remove-Item "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
+        Remove-Item "C:\Windows\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+        Clear-RecycleBin -Force
+
+    - name: Check storage space
+      ansible.windows.win_powershell:
+       script: |
+        Get-Volume -DriveLetter C | Select-Object SizeRemaining
+      register: storage_space
+
+    - name: Continue if storage > 4GB
+      assert:
+       that: storage_space.output[0].SizeRemaining is defined and (storage_space.output[0].SizeRemaining | int) > 4294967290
+       fail_msg: "Insufficient storage space. At least 4GB is required."
+
+    - block:
+          - name: Extract only Windows installer from bundle
+            command: >
+              unzip /home/vkumani/ansible/Autosys_24.2.01_2026-10-15.zip
+              "Autosys/Autosys_AE.Installer_Windows_24_2_01+build.1792050018255.zip"
+              -d /tmp/
+            args:
+              creates: /tmp/Autosys/Autosys_AE.Installer_Windows_24_2_01+build.1792050018255.zip
+
+          - name: Extract Windows installer ZIP
+            unarchive:
+              src: /tmp/Autosys/Autosys_AE.Installer_Windows_24_2_01+build.1792050018255.zip
+              dest: /tmp/
+            
+
+          - name: Remove windows zip file
+            file:
+              path: /tmp/Autosys
+              state: absent
+      delegate_to: localhost
+
+    - name: Ensure C:\Temp exists
+      ansible.windows.win_file:
+        path: C:\Temp
+        state: directory
+
+    - name: Copy Autosys iso image to windows host
+      ansible.windows.win_copy:
+        src: /tmp/AutoSysWIN24.2.01.iso
+        dest: C:\Temp\AutoSysWIN24.2.01.iso
+
+    - name: Mount the iso image
+      ansible.windows.win_shell: |
+          Mount-DiskImage -ImagePath "C:\Temp\AutoSysWIN24.2.01.iso"
+      args:
+        creates: 'D:\install.exe'
+
+
+    - name: Copy the eem installation response file to the windows host
+      ansible.windows.win_copy:
+        src: /home/vkumani/ansible/autosys/eem_response.txt
+        dest: C:\Temp\eem_response.txt
+    
+    - name: Edit the eem installation response file with hostname
+      ansible.windows.win_lineinfile:
+        path: C:\Temp\eem_response.txt
+        regexp: '^IA_AE_EEM_FQDN_NAME=.*'
+        line: "IA_AE_EEM_FQDN_NAME={{ hostvars[groups['TST_Web-Server'][0]].instance_hostname.result }}" 
+
+    - name: Run EEM installer
+      ansible.windows.win_powershell:
+        script: |
+         $env:AE_RESPONSE_FILE_ENC_KEY = "7F3A9C2E8B1D6A405E7C3F9B2D8A1E64"
+         & "D:\install.exe" -i silent -f C:\Temp\eem_response.txt
+      async: 3600
+      poll: 0
+
+    - name: Wait for host connection
+      wait_for_connection:
+        timeout: 900
+
+    - name: Wait for EEM port
+      ansible.windows.win_wait_for:
+        port: 5250
+        timeout: 900     

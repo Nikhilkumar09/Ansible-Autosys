@@ -1,0 +1,601 @@
+# Mon Nov 02 12:32:04 UTC 2026
+# Replay feature output
+# ---------------------
+# This file was built by the Replay feature of InstallAnywhere.
+# It contains variables that were set by Panels, Consoles or Custom Code.
+
+
+
+#Installation Options
+#--------------------
+
+#Installation Modes
+#------------------
+
+#Choose Java Virtual Machine
+#---------------------------
+JDK_HOME=
+
+#FIPS Encryption
+#---------------
+IA_AE_IS_FIPS_ENABLED=0
+
+#Install Option
+ When set to 1 actual AutoSys installation is skipped, but all the required validations are performed and recorded in the logs.
+ This helps you identify any shortcomings before performing the actual install.
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_SKIP_INSTALL=0
+
+#Web UI Reporting Database Properties
+#------------------------------------
+IA_AE_WCC_REPORT_DB_SERVERNAME=
+IA_AE_WCC_REPORT_DB_PORT=
+IA_AE_WCC_REPORT_DB_SERVICE_PRINCIPAL_NAME=
+IA_AE_WCC_REPORT_DB_SCHEMA_NAME=
+IA_AE_WCC_REPORT_DB_NAME=
+IA_AE_WCC_REPORT_DB_HOSTNAME=
+
+#Instance Database Administrator User Details
+#Authentication Type:
+#	0 - Windows authentication
+#	1 - User authentication
+#-------------------------------------------------------------------------------------------------------------------------
+
+#Web UI Database Schema Options
+#------------------------------
+IA_AE_WCC_REPORTING_DB_SCHEMA_CREATION=0
+IA_AE_WCC_APPLICATION_DB_SCHEMA_CREATION=1
+
+#Maintenance Options
+#-------------------
+IA_AE_MAINT_OPTION=MODIFY
+
+#Database Storage Management - Oracle
+#------------------------------------
+
+#Web UI Database User Details
+#----------------------------
+IA_AE_WCC_DB_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_DB_ORA_USER_CACHE_LOCATION=
+IA_AE_WCC_DB_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_WCC_DB_ORA_USER_PRINCIPAL_NAME=
+IA_AE_WCC_DB_USER_CERTIFICATE_PATH=
+
+#Auto-Generated Key Access
+#Note:
+#	- IA_AE_IS_AUTOGEN_KEY_WORLD_READABLE=0 restricts the key file to AutoSys users. Set it to 1 to additionally let every user on the computer read it.
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#SNMP Information
+#----------------
+IA_AE_SNMP_TRAP_LISTENER_PORT=
+IA_AE_SNMP_HOSTNAME=
+IA_AE_ENABLE_SNMPJOB_TYPE=
+IA_AE_CONTROL_BY_SNMP=
+IA_AE_SNMP_CONTROL_PORT=
+
+#Installation Path
+#-----------------
+USER_INSTALL_DIR=C:\\Program Files\\CA\\WorkloadAutomationAE
+SC_INSTALL_DIR=C:\\Program Files\\CA\\SharedComponents
+
+#Start Services On System Startup 
+#---------------------------------
+IA_AE_SERVICE_START_ON_SYSTEM_START=
+
+#Agent SSL Certificate Configuration
+#-----------------------------------
+
+#Owner Settings
+#Note:
+#	- IA_AE_OWNER applies to Linux/UNIX only. It names the account the AutoSys files belong to.
+#-------------------------------------------------------------------------------------------------------------------
+IA_AE_OWNER=autosys
+
+#Scheduler role
+#	PRIMARY (Default)
+#	SHADOW
+#	TIEBREAKER
+#--------------------------------------------------------
+IA_AE_SCHED_ROLE=
+
+#Primary Event Server Properties
+#-------------------------------
+IA_AE_DB_ROOT_CA_PATH=
+IA_AE_PRIMARY_DB_PORT=
+IA_AE_PRIMARY_DB_SERVICE_PRINCIPAL_NAME=
+IA_AE_PRIMARY_DB_SERVERNAME=
+IA_AE_PRIMARY_DB_NAME=
+IA_AE_PRIMARY_DB_SCHEMA_NAME=
+
+#CA EEM Configuration
+#--------------------
+IA_AE_DSA_PORT=509
+IA_AE_EEM_DB_SIZE=256
+IA_AE_EEM_GROUP=etrdir
+IA_AE_EEM_PASSWORD=0X41F32FDBFAFF3511E39AF498CD88F3E147C576CF6CF76872CD50387B4A26972AC6CA19C1D84C73C6C43E413C04525D4A
+IA_AE_EEM_OWNER=dsa
+IA_AE_EEM_FQDN_NAME=EC2AMAZ-3VUFL4K
+
+#Web UI Database Properties
+#--------------------------
+IA_AE_WCC_DB_ROOT_CA_PATH=
+IA_AE_WCC_DB_NAME=
+IA_AE_WCC_DB_SERVERNAME=
+IA_AE_WCC_DB_PORT=
+IA_AE_WCC_DB_HOSTNAME=
+IA_AE_WCC_DB_SERVICE_PRINCIPAL_NAME=
+IA_AE_WCC_DB_SCHEMA_NAME=
+IA_AE_WCC_USE_SAME_DB_FOR_REPORTING=
+
+#Agent SSL CURRENT variables (for upgrade flow - similar to instance CURRENT variables)
+#--------------------------------------------------------------------------------------
+
+#Application Server Information
+#------------------------------
+IA_AE_APP_SERVER_AUX_PORT=
+IA_AE_APP_SERVER_AUX_HTTPS_PORT=
+IA_AE_APP_SERVER_PORT=
+IA_AE_APP_SERVER_HOSTNAME=
+
+#Modify Installation
+#-------------------
+IA_AE_MODIFY_OPTIONS=ADDCOMPONENT
+
+#Installation Maintenance
+#------------------------
+IA_AE_MAIN_MAINT_OPTION=MODIFY_PRODUCT
+
+#Proxy Details
+#-------------
+IA_AE_PROXY_URI=
+IA_AE_USE_PROXY=
+IA_AE_PROXY_PWD=
+IA_AE_PROXY_USER_NAME=
+
+#Database Details -
+#------------------
+
+#Data Device Information
+#-----------------------
+IA_AE_SECONDARY_DB_SYB_DATA_DEVICE_NAME=
+IA_AE_PRIMARY_DB_SYB_DATA_DEVICE_SIZE=
+IA_AE_SECONDARY_DB_SYB_DATA_DEVICE_PATH=
+IA_AE_PRIMARY_DB_SYB_DATA_DEVICE_NAME=
+IA_AE_PRIMARY_DB_SYB_DATA_DEVICE_PATH=
+IA_AE_SECONDARY_DB_SYB_DATA_DEVICE_SIZE=
+
+#Running Services
+#----------------
+
+#Web UI Reporting Admin User Details
+#-----------------------------------
+IA_AE_WCC_REPORT_DB_ADMIN_CLIENT_CACHE_PATH=
+IA_AE_WCC_REPORT_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_WCC_REPORT_DB_ADMIN_PWD=
+IA_AE_WCC_REPORT_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_REPORT_DB_ADMIN_USER=
+IA_AE_WCC_REPORT_DB_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_WCC_REPORT_DB_ORA_ADMIN_CACHE_LOCATION=
+
+#Agent Level Data Encryption
+#	Empty value means default key
+#	Value with 0x prefix means Hexadecimal and encrypted
+#	Others values means Passphrase
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_ENCRYPTION_KEY_AGENT=
+
+#Data Tablespace Information
+#---------------------------
+IA_AE_PRIMARY_DB_ORA_DATA_DISKGROUP_NAME=
+IA_AE_PRIMARY_DB_ORA_DATA_TBLSPACE_SIZE=
+IA_AE_SECONDARY_DB_PGS_DATA_TBLSPACE_NAME=
+IA_AE_WCC_DB_ORA_DATA_TBLSPACE_SIZE=
+IA_AE_WCC_DB_PGS_USE_DEFAULT_TBLSPACE=
+IA_AE_WCC_REPORT_DB_ORA_DATA_TBLSPACE_SIZE=
+IA_AE_SECONDARY_DB_PGS_DATA_TBLSPACE_PATH=
+IA_AE_SECONDARY_DB_ORA_DATA_TBLSPACE_PATH=
+IA_AE_PRIMARY_DB_ORA_DATA_TBLSPACE_PATH=
+IA_AE_SECONDARY_DB_PGS_USE_DEFAULT_TBLSPACE=
+IA_AE_WCC_DB_PGS_DATA_TBLSPACE_NAME=
+IA_AE_SECONDARY_DB_ORA_DATA_TBLSPACE_NAME=
+IA_AE_WCC_REPORT_DB_ORA_DATA_TBLSPACE_PATH=
+IA_AE_WCC_DB_ORA_DATA_TBLSPACE_PATH=
+IA_AE_WCC_REPORT_DB_PGS_DATA_TBLSPACE_NAME=
+IA_AE_SECONDARY_DB_ORA_DATA_DISKGROUP_NAME=
+IA_AE_WCC_REPORT_DB_PGS_USE_DEFAULT_TBLSPACE=
+IA_AE_WCC_DB_ORA_DATA_DISKGROUP_NAME=
+IA_AE_WCC_REPORT_DB_PGS_DATA_TBLSPACE_PATH=
+IA_AE_WCC_REPORT_DB_ORA_DATA_DISKGROUP_NAME=
+IA_AE_PRIMARY_DB_ORA_DATA_TBLSPACE_NAME=
+IA_AE_WCC_DB_PGS_DATA_TBLSPACE_PATH=
+IA_AE_SECONDARY_DB_ORA_DATA_TBLSPACE_SIZE=
+IA_AE_WCC_DB_ORA_DATA_TBLSPACE_NAME=
+IA_AE_WCC_REPORT_DB_ORA_DATA_TBLSPACE_NAME=
+
+#Instance Level CA EEM Security
+#------------------------------
+IA_AE_USE_LOCAL_EEM_AS_INSTANCE_EEM=
+IA_AE_INSTANCE_EEM_PASSWORD=
+IA_AE_INSTANCE_EEM_SERVER_NAME=
+IA_AE_INSTANCE_EEM_FOR_WCC=
+
+#Database Type
+#IA_AE_WCC_DATABASE_TYPE:
+#	MSSQL (Default)
+#	ORACLE
+#	POSTGRESQL (Not applicable for create schema)
+#------------------------------------------------------------------------------------------------------------------
+IA_AE_WCC_CREATE_DATABASE=
+IA_AE_WCC_DATABASE_TYPE=
+IA_AE_WCC_USE_REPORT_DATABASE=
+
+#Scheduler/Application Server SSL Certificate Configuration
+#Note:
+#	- If IA_AE_MGR_SSL_USE_SAME_CERTS=1, server certificates are applied to the client.
+#	- These settings are ignored if the Certificate Type is "Predefined".
+#	- Client-specific values are ignored if One-Way SSL is enabled or if using the same certs. 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_MGR_SSL_SERVER_CERT_PATH=
+IA_AE_MGR_SSL_SERVER_KEY_PASSPHRASE=
+IA_AE_MGR_SSL_SERVER_KEY_PATH=
+IA_AE_MGR_SSL_USE_SAME_CERTS=
+IA_AE_MGR_SSL_ROOT_CERT_PATH=
+
+#Scheduler/Application Server Protocol
+#
+# Authentication Type(IA_AE_COMM_PROTOCOL_AUTH_TYPE)
+#	0 - OneWay
+#	1 - TwoWay
+#
+# Certificate Type(IA_AE_COMM_PROTOCOL_CERT_TYPE)
+#	0 - Predefined
+#	1 - Custom (default)
+#
+#	Note: Predefined certificates are signed by a root certificate authority that is embedded in
+#	the product and is the same in every installation. For production environments, use Custom
+#	with certificates issued by a certificate authority that you control.
+#	This value must be set explicitly. If it is omitted, Custom is assumed and the certificate
+#	paths below are required.
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_COMM_PROTOCOL_HTTPS_ENABLED=
+IA_AE_COMM_PROTOCOL_AUTH_TYPE=
+IA_AE_COMM_PROTOCOL_CERT_TYPE=
+
+#Database Schema Options
+#-----------------------
+IA_AE_SCHEMA_TYPE=0
+
+#Index Tablespace Information
+#----------------------------
+IA_AE_SECONDARY_DB_ORA_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_REPORT_DB_ORA_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_DB_ORA_INDEX_TBLSPACE_SIZE=
+IA_AE_PRIMARY_DB_ORA_INDEX_DISKGROUP_NAME=
+IA_AE_WCC_REPORT_DB_PGS_INDEX_TBLSPACE_NAME=
+IA_AE_SECONDARY_DB_ORA_INDEX_DISKGROUP_NAME=
+IA_AE_PRIMARY_DB_ORA_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_DB_PGS_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_REPORT_DB_PGS_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_REPORT_DB_ORA_INDEX_TBLSPACE_NAME=
+IA_AE_SECONDARY_DB_ORA_INDEX_TBLSPACE_NAME=
+IA_AE_PRIMARY_DB_ORA_INDEX_TBLSPACE_NAME=
+IA_AE_WCC_DB_ORA_INDEX_TBLSPACE_PATH=
+IA_AE_SECONDARY_DB_ORA_INDEX_TBLSPACE_SIZE=
+IA_AE_WCC_REPORT_DB_ORA_INDEX_TBLSPACE_SIZE=
+IA_AE_WCC_DB_PGS_INDEX_TBLSPACE_NAME=
+IA_AE_WCC_REPORT_DB_ORA_INDEX_DISKGROUP_NAME=
+IA_AE_WCC_DB_ORA_INDEX_TBLSPACE_NAME=
+IA_AE_PRIMARY_DB_ORA_INDEX_TBLSPACE_SIZE=
+IA_AE_SECONDARY_DB_PGS_INDEX_TBLSPACE_PATH=
+IA_AE_WCC_DB_ORA_INDEX_DISKGROUP_NAME=
+IA_AE_SECONDARY_DB_PGS_INDEX_TBLSPACE_NAME=
+
+#AutoSys Database User Details
+#-----------------------------
+IA_AE_DB_ORA_USER_CACHE_LOCATION=
+IA_AE_DB_ORA_USER_PRINCIPAL_NAME=
+
+#Instance-level External Authentication -
+#----------------------------------------
+
+#Secondary Event Server Properties
+#---------------------------------
+IA_AE_SECONDARY_DB_PORT=
+IA_AE_SECONDARY_DB_NAME=
+IA_AE_SECONDARY_DB_SERVERNAME=
+IA_AE_SECONDARY_DB_SCHEMA_NAME=
+IA_AE_SECONDARY_DB_SERVICE_PRINCIPAL_NAME=
+
+#AutoSys database client certificate details
+#-------------------------------------------
+IA_AE_DB_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_DB_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_DB_USER_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_DB_USER_CERTIFICATE_PATH=
+IA_AE_DB_USER_CERTIFICATE_PRIVATE_KEY_PATH=
+
+#Deregister CA EEM Policies
+#--------------------------
+
+#Auto-Generated Key Group
+#Note:
+#	- IA_AE_GROUP names the group granted read access to the auto-generated key file, and is required. The installer creates the group if it does not already exist. To use an Active Directory group instead of a local one, qualify it with its domain, for example DOMAIN\GroupName.
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_GROUP=autosys
+
+#Instance Information
+#--------------------
+IA_AE_INSTANCE_NAME=
+
+#Reporting Database Administrator User Details
+#Authentication Type
+#	0 - Windows authentication
+#	1 - User authentication
+#-------------------------------------------------------------------------------------------------------------------------
+
+#Web UI Connection Type - Oracle
+#-------------------------------
+
+#Data Encryption
+#	Empty value means default key
+#	Value with 0x prefix means Hexadecimal and encrypted
+#	Others values means Passphrase
+#---------------------------------------------------------------------------------------------------------------------------------------
+IA_AE_ENCRYPTION_KEY_INSTANCE=
+
+#Agent SSL Certificate Configuration - Agent as HTTPS Server
+#Note:
+#	- If IA_AE_AGENT_SSL_USE_SAME_CERT_STORES_FOR_CLIENT=1, server certificates are applied to the client.
+#	- These settings are ignored if the Certificate Type is "Predefined".
+#	- "Predefined" uses a root certificate authority that is embedded in the product and is the same
+#	  in every installation. For production environments, use "Custom" with certificates issued by a
+#	  certificate authority that you control.
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Agent SSL Certificate Configuration - Agent as HTTPS Client
+#Note:
+#	- These settings are ignored if the Certificate Type is "Predefined".
+#------------------------------------------------------------------------------------------------------------------------------------------
+
+#Upgrade Options
+#---------------
+IA_AE_UPGRADE_OPTIONS=UPGRADE_PRODUCT
+
+#Components to Install
+#Dependent component(s) will be auto selected.
+#--------------------------------------------------------------------
+IA_AE_SELECTED_AGENT=0
+IA_AE_SELECTED_WCC_COLLECTOR=0
+IA_AE_SELECTED_EEM=1
+IA_AE_SELECTED_SCHEDULER=0
+IA_AE_SELECTED_CLIENT=0
+IA_AE_SELECTED_SSA=0
+IA_AE_SELECTED_APPLICATIONSERVER=0
+IA_AE_SELECTED_SDK=0
+IA_AE_SELECTED_WCC=0
+IA_AE_SELECTED_RESTWS=0
+IA_AE_SELECTED_SOAPWS=0
+
+#Start Services Post-Installation 
+#---------------------------------
+IA_AE_SERVICE_START_ONINSTALL=
+
+#CA EEM Security for Web UI
+#--------------------------
+IA_AE_WCC_EEM_SERVER_NAME=
+IA_AE_WCC_EEM_PASSWORD=
+
+#Web Services Properties
+#-----------------------
+IA_AE_RESTWS_COMM_PORT=
+IA_AE_SOAPWS_COMM_PORT=
+
+#Scheduler Properties
+#--------------------
+IA_AE_SCHEDULER_AUX_HTTPS_PORT=
+IA_AE_SCHEDULER_AUX_PORT=
+
+#Web UI Database Administrator User Details
+#Authentication Type:
+#	0 - Windows authentication
+#	1 - User authentication
+#-----------------------------------------------------------------------------------------------------------------------
+
+#Machine Definition-Local Agent
+#------------------------------
+
+#Restart Information
+#-------------------
+USER_REQUESTED_RESTART=NO
+
+#Instance Master Key
+#	Exactly 32 hexadecimal characters (0-9, A-F)
+#------------------------------------------------------------------
+IA_AE_USE_SAME_MASTER_KEY_FOR_WEBUI=
+
+#Web UI Admin Details
+#--------------------
+IA_AE_WCC_DB_ADMIN_USER=
+IA_AE_WCC_USE_SAME_CRED_FOR_REPORTING=
+IA_AE_WCC_DB_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_WCC_DB_ORA_ADMIN_CACHE_LOCATION=
+IA_AE_WCC_DB_ADMIN_PWD=
+IA_AE_WCC_DB_ADMIN_CLIENT_CACHE_PATH=
+IA_AE_WCC_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_WCC_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+
+#AE_DB_Schema_Admin_User_Title
+#-----------------------------
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_PRIMARY_DB_ORA_SCHEMA_ADMIN_PRINCIPAL_NAME=
+IA_AE_WCC_REPORT_DB_SCHEMA_ADMIN_USER=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_DB_ORA_SCHEMA_ADMIN_CACHE_LOCATION=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_REPORT_DB_ORA_SCHEMA_ADMIN_CACHE_LOCATION=
+IA_AE_SECONDARY_DB_ORA_SCHEMA_ADMIN_CACHE_LOCATION=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_PWD=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER=
+IA_AE_WCC_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_REPORT_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_WCC_USE_SAME_SCHEMA_CRED_FOR_REPORTING=
+IA_AE_SECONDARY_DB_ORA_ADMIN_USER_CACHE_LOCATION=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_WCC_DB_SCHEMA_ADMIN_USER=
+IA_AE_WCC_REPORT_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_PWD=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_PRIMARY_DB_ORA_SCHEMA_ADMIN_CACHE_LOCATION=
+IA_AE_WCC_REPORT_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_WCC_DB_ORA_SCHEMA_ADMIN_PRINCIPAL_NAME=
+IA_AE_WCC_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_PRIMARY_DB_SCHEMA_ADMIN_USER=
+IA_AE_WCC_DB_SCHEMA_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_SECONDARY_DB_SCHEMA_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+
+#Web UI Port Configuration
+#-------------------------
+IA_AE_WCC_COLLECTOR_NAME=
+IA_AE_WCC_COMM_PORT=
+IA_AE_WCC_COLLECTOR_EVENTBUS_PORT=
+
+#Cluster Resource Group
+#----------------------
+IA_AE_USE_CLUSTER=
+IA_AE_CLUSTER_GROUP_NAME=
+
+#Database Details
+#----------------
+IA_AE_DB_PGS_BIN_PATH=
+IA_AE_DB_PGS_LIB_PATH=
+
+#Database SSL mode
+#	prefer (Default)
+#	allow
+#	require
+#	verify-ca
+#	verify-full
+#--------------------------------------------------------------------------------
+IA_AE_DB_SSL_MODE=
+IA_AE_WCC_DB_SSL_MODE=
+
+#SSL Properties
+#Note: When selected, the SSL properties of the first instance (sorted alphabetically) are automatically applied to all other instances enabled for HTTPS.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#AE_DB_Admin_User_Title
+#----------------------
+IA_AE_SECONDARY_DB_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_SECONDARY_DB_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_PRIMARY_DB_ADMIN_USER_CERTIFICATE_PATH=
+IA_AE_SECONDARY_DB_ADMIN_USER=
+IA_AE_SECONDARY_DB_ADMIN_CLIENT_CACHE_PATH=
+IA_AE_SECONDARY_DB_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_PRIMARY_DB_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_USE_SAME_CRED_FOR_SECONDARY=
+IA_AE_PRIMARY_DB_ORA_ADMIN_USER_CACHE_LOCATION=
+IA_AE_PRIMARY_DB_ADMIN_USER=
+IA_AE_SECONDARY_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_PRIMARY_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_PRIMARY_DB_ADMIN_PWD=
+IA_AE_SECONDARY_DB_ADMIN_PWD=
+IA_AE_PRIMARY_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PASSPHRASE=
+IA_AE_SECONDARY_DB_ADMIN_USER_JDBC_CERTIFICATE_PRIVATE_KEY_PATH=
+IA_AE_PRIMARY_DB_ADMIN_CLIENT_CACHE_PATH=
+IA_AE_PRIMARY_DB_ADMIN_USER_CERTIFICATE_PRIVATE_KEY_PATH=
+
+#Installation Options
+#--------------------
+IA_AE_FRESH_OPTIONS=INSTALL_PRODUCT
+
+#PostgreSQL Data Tablespace Information
+#--------------------------------------
+IA_AE_PRIMARY_DB_PGS_DATA_TBLSPACE_PATH=
+IA_AE_PRIMARY_DB_PGS_DATA_TBLSPACE_NAME=
+IA_AE_PRIMARY_DB_PGS_USE_DEFAULT_TBLSPACE=
+
+#CA EEM Component Upgrade
+#------------------------
+IA_AE_IS_EEM64_UPGRADE=1
+
+#$IA_AE_MASTER_KEY_SCOPE_LABEL$ Master Key
+#-----------------------------------------
+IA_AE_WEBUI_COLLECTOR_MASTER_KEY=
+IA_AE_WEBUI_MASTER_KEY=
+IA_AE_MASTER_KEY=
+
+#Database Type
+#IA_AE_DATABASE_TYPE:
+#	MSSQL (Default)
+#	ORACLE
+#	SYBASE
+#	POSTGRESQL
+#------------------------------------------------------------------------------------
+IA_AE_DATABASE_TYPE=
+IA_AE_DUAL_DATABASE=
+IA_AE_CREATE_DATABASE=
+
+#Log Device Information
+#----------------------
+IA_AE_PRIMARY_DB_SYB_USE_LOG=
+IA_AE_SECONDARY_DB_SYB_LOG_DEVICE_SIZE=
+IA_AE_PRIMARY_DB_SYB_LOG_DEVICE_SIZE=
+IA_AE_PRIMARY_DB_SYB_LOG_DEVICE_PATH=
+IA_AE_SECONDARY_DB_SYB_USE_LOG=
+IA_AE_PRIMARY_DB_SYB_LOG_DEVICE_NAME=
+IA_AE_SECONDARY_DB_SYB_LOG_DEVICE_PATH=
+IA_AE_SECONDARY_DB_SYB_LOG_DEVICE_NAME=
+
+#Agent Properties
+#----------------
+IA_AE_AGENT_NAME=
+IA_AE_AGENT_PORT=
+IA_AE_ENABLE_PORT_MUX=
+
+#Agent and Application Server Port
+#---------------------------------
+IA_AE_AGENT_APP_SERVER_PORT=
+
+#PostgreSQL Index Tablespace Information
+#---------------------------------------
+IA_AE_PRIMARY_DB_PGS_INDEX_TBLSPACE_PATH=
+IA_AE_PRIMARY_DB_PGS_INDEX_TBLSPACE_NAME=
+
+#Instance Level Security
+#-----------------------
+IA_AE_INSTANCE_SECURITY_MODE=
+
+#Choose Java Virtual Machine
+#---------------------------
+IA_AE_USE_BUNDLED_JVM=1
+IA_AE_JAVA_EXE=C:\\Program Files\\CA\\WorkloadAutomationAE\\jre\\bin\\java.exe
+IA_AE_JAVA_DOT=C:\\Program Files\\CA\\WorkloadAutomationAE\\jre
+
+#Installation Modes
+#------------------
+IA_AE_INSTALLATION_MODE=CUSTOM
+
+#AE_DB_Schema_Admin_User_Title    
+#---------------------------------
+IA_AE_WCC_REPORT_DB_SCHEMA_ADMIN_PWD=
+IA_AE_WCC_DB_SCHEMA_ADMIN_PWD=
+
+#Install
+#-------
+-fileOverwrite_C\:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\970092.tmp\\reporting_table_list.txt=Yes
+-fileOverwrite_C\:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\970092.tmp\\wcc_table_list.txt=Yes
+-fileOverwrite_C\:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\970092.tmp\\reporting_oracle_sequence_list.txt=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\UninstallAutoSysWorkloadAutomation.lax=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\resource\\iawin64_x64.dll=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\resource\\iawin32.dll=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\resource\\win64_32_x64.exe=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\resource\\remove.exe=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\uninstaller\\resource\\invoker.exe=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\autosys\\install\\eiam.config=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\autosys\\install\\eiam.log4j.config=Yes
+-fileOverwrite_C\:\\Program\ Files\\CA\\WorkloadAutomationAE\\EEMSilentInstall.properties=Yes

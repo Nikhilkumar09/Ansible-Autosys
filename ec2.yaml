@@ -1,0 +1,100 @@
+
+- name: Create instance(s)
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Fetch local ip address
+      shell: curl -s https://checkip.amazonaws.com
+      register: local_ip
+
+    - name: Creating a security group for ports 5985, 5986, 3389, 80, and 443.
+      amazon.aws.ec2_security_group:
+        name: SG-WEB
+        description: Creating a security group for ports 5985, 5986, 3389, 80, and 443.
+        vpc_id: vpc-09d27351b06a2825f
+        rules:
+          - proto: tcp
+            ports:
+              - 5985
+              - 5986
+              - 3389
+            cidr_ip: "{{ local_ip.stdout }}/32"
+
+          - proto: tcp
+            ports:
+              - 80
+              - 443
+            cidr_ip: 0.0.0.0/0
+
+    - name: start an instance with a public IP address
+      amazon.aws.ec2_instance:
+        name: "Web-Server"
+        key_name: "target1"
+        vpc_subnet_id: subnet-023a0137f31f46138
+        instance_type: t3.micro
+        security_group: SG-WEB
+        network_interfaces:
+          - assign_public_ip: true
+        image_id: ami-051e5186c9ea629bb
+        user_data: |
+          <powershell>
+          winrm quickconfig -quiet
+          winrm set winrm/config/service/Auth '@{Basic="true"}'
+          winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+          Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $true
+          Enable-PSRemoting -Force
+          New-NetFirewallRule -Name "WinRM PortA" -DisplayName "Allow WinRM" -Protocol TCP -LocalPort 5985 -Action Allow
+          New-NetFirewallRule -Name "WinRM PortB" -DisplayName "Allow WinRM" -Protocol TCP -LocalPort 5986 -Action Allow
+          </powershell>
+        tags:
+          Environment: Testing 
+          Name: Web-Server
+      
+       
+    - name: Fetch updated EC2 instance details
+      amazon.aws.ec2_instance_info:
+        filters:
+          instance-state-name: running
+          tag:Name: Web-Server
+      register: ec2
+      until: ec2.instances | length > 0 and ec2.instances[0].public_ip_address is defined
+      retries: 20
+      delay: 5
+
+
+    - name: Get launnched ec2 windows password
+      shell: aws ec2 get-password-data \
+          --instance-id "{{ ec2.instances[0].instance_id }}" \
+          --priv-launch-key /home/vkumani/Downloads/Ansible/target1.pem \
+          --query PasswordData \
+          --output text
+      register: win_pass
+      until: win_pass.stdout is defined and win_pass.stdout | length > 0
+      delay: 10
+      retries: 90
+
+
+    - name: Checks RDP (3389), WinRM HTTP (5985), and WinRM HTTPS (5986)
+      wait_for: 
+        host: "{{ item.0.public_ip_address }}"
+        port: "{{ item.1 }}"  
+        timeout: 5
+      loop: "{{ ec2.instances | product([3389,5985]) | list }}"
+      register: port_status
+      until: port_status is succeeded      
+      retries: 90
+      delay: 5
+
+
+    - name: Add host to web servers
+      ansible.builtin.add_host:
+        name: "{{ ec2.instances[0].public_ip_address }}"
+        private_ip: "{{ ec2.instances[0].private_ip_address }}"
+        groups: TST_Web-Server
+        ansible_connection: winrm
+        ansible_port: 5985
+        ansible_winrm_transport: ntlm
+        ansible_winrm_server_cert_validation: ignore
+        ansible_user: Administrator
+        ansible_password: "{{ win_pass.stdout }}"

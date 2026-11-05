@@ -1,0 +1,30 @@
+- name: Update hosts file
+  hosts: TST_Web-Server
+  tasks:
+    - name: Get hostname of the instance
+      ansible.windows.win_powershell:
+        script: |
+          $Ansible.Result = $env:COMPUTERNAME
+      register: instance_hostname
+
+    - name: Get IP of the Windows instance
+      ansible.windows.win_powershell:
+        script: |
+          (Get-NetIPAddress -AddressFamily IPv4 |
+            Where-Object {
+              $_.InterfaceAlias -notlike '*Loopback*' -and
+              $_.IPAddress -notlike '169.254*'
+            } |
+            Select-Object -First 1 -ExpandProperty IPAddress)
+      register: instance_ip
+
+    - name: Update hosts file
+      ansible.windows.win_lineinfile:
+        path: 'C:\Windows\System32\drivers\etc\hosts'
+        line: "{{ instance_ip.output[0] }} {{ instance_hostname.result }}"
+        state: present
+      notify: Flush DNS
+
+  handlers: 
+    - name: Flush DNS
+      ansible.windows.win_shell: ipconfig /flushdns

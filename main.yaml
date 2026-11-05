@@ -1,0 +1,8 @@
+ - name: Create instances
+   import_playbook: ec2.yaml
+
+ - name: Add host values to etc/hosts of launched ec2
+   import_playbook: hosts.yaml
+
+ - name: EEM installation
+   import_playbook: eem.yaml
